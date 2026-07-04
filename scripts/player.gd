@@ -1,8 +1,10 @@
 extends CharacterBody2D
 
+# Ship movement
 @export var speed: float = 150.0
 @export var acceleration: float = 600.0
 @export var deceleration: float = 500.0
+@export var fire_rate: float = 0.2
 
 # Screen boundaries (based on 384x216 viewport)
 var margin: float = 12.0
@@ -11,9 +13,11 @@ var max_x: float = 384.0
 var min_y: float = 0.0
 var max_y: float = 216.0
 
-@onready var ship_sprite: Sprite2D = $ShipSprite
+var fire_timer: float = 0.0
 
-# Change these to match whichever frames are correct on your sheet
+@onready var ship_sprite: Sprite2D = $ShipSprite
+var bullet_scene: PackedScene = preload("res://scenes/bullet.tscn")
+
 @export var frame_idle: int = 18
 @export var frame_lean_left: int = 16
 @export var frame_lean_right: int = 20
@@ -43,8 +47,19 @@ func _physics_process(delta: float) -> void:
 	position.x = clamp(position.x, min_x + margin, max_x - margin)
 	position.y = clamp(position.y, min_y + margin, max_y - margin)
 	
+	# Shooting
+	fire_timer -= delta
+	if Input.is_action_pressed("shoot") and fire_timer <= 0:
+		shoot()
+		fire_timer = fire_rate
+	
 	# Animation handling
 	update_animation()
+
+func shoot() -> void:
+	var bullet = bullet_scene.instantiate()
+	bullet.position = Vector2(position.x, position.y - 12)
+	get_parent().add_child(bullet)
 
 func update_animation() -> void:
 	if Input.is_action_pressed("ui_left"):
