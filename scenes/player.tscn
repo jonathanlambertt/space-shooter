@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dyujc20bqiv7r"]
+
+[ext_resource type="Texture2D" uid="uid://4rrgwnwqps2p" path="res://assets/shooter_sheet.png" id="1_3vyb7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3poc4"]
+size = Vector2(9, 16)
+
+[node name="Player" type="CharacterBody2D" unique_id=1173701108]
+
+[node name="ShipSprite" type="Sprite2D" parent="." unique_id=1361628742]
+texture = ExtResource("1_3vyb7")
+hframes = 8
+vframes = 4
+frame = 18
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=462485335]
+shape = SubResource("RectangleShape2D_3poc4")

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://0l77tw0u1xeo"]
+
+[ext_resource type="Texture2D" uid="uid://bb2klh0hque7f" path="res://assets/backgrounds/starfield_far_384x216.png" id="1_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://dl0nhv5lkxn5w" path="res://assets/backgrounds/starfield_near_384x216.png" id="2_iywne"]
+[ext_resource type="Script" uid="uid://c4e6stn74v70y" path="res://scripts/player.gd" id="4_iywne"]
+[ext_resource type="PackedScene" uid="uid://dyujc20bqiv7r" path="res://scenes/player.tscn" id="4_lbhrr"]
+
+[node name="Game" type="Node2D" unique_id=78172850]
+
+[node name="ParallaxFar" type="Parallax2D" parent="." unique_id=180152834]
+scroll_scale = Vector2(0, 0.3)
+repeat_size = Vector2(384, 216)
+autoscroll = Vector2(0, 20)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxFar" unique_id=594585412]
+texture = ExtResource("1_lbhrr")
+centered = false
+
+[node name="ParallaxNear" type="Parallax2D" parent="." unique_id=745386999]
+scroll_scale = Vector2(0, 0.6)
+repeat_size = Vector2(384, 216)
+autoscroll = Vector2(0, 40)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxNear" unique_id=558714498]
+texture = ExtResource("2_iywne")
+centered = false
+
+[node name="Player" parent="." unique_id=1173701108 instance=ExtResource("4_lbhrr")]
+position = Vector2(192, 180)
+script = ExtResource("4_iywne")
