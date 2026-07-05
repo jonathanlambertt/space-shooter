@@ -32,3 +32,9 @@ script = ExtResource("4_iywne")
 
 [node name="Enemy" parent="." unique_id=1559925770 instance=ExtResource("5_iywne")]
 position = Vector2(192, 40)
+
+[node name="Enemy2" parent="." unique_id=749051158 instance=ExtResource("5_iywne")]
+position = Vector2(160, 40)
+
+[node name="Enemy3" parent="." unique_id=108432057 instance=ExtResource("5_iywne")]
+position = Vector2(220, 40)

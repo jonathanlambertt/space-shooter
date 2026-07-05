@@ -5,13 +5,82 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3poc4"]
 size = Vector2(9, 16)
 
-[node name="Player" type="CharacterBody2D" unique_id=1173701108]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vyb7"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(0, 24, 24, 24)
 
-[node name="ShipSprite" type="Sprite2D" parent="." unique_id=1361628742]
-texture = ExtResource("1_3vyb7")
-hframes = 8
-vframes = 4
-frame = 18
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(0, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(96, 48, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wccwa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vyb7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2els")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhqgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqkch")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlg0r")
+}],
+"loop": 1,
+"name": &"lean_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuyoq")
+}],
+"loop": 1,
+"name": &"lean_right",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wccwa"]
+size = Vector2(9, 18)
+
+[node name="Player" type="CharacterBody2D" unique_id=1173701108]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=462485335]
 shape = SubResource("RectangleShape2D_3poc4")
+
+[node name="ShipSprite" type="AnimatedSprite2D" parent="." unique_id=469709969]
+sprite_frames = SubResource("SpriteFrames_wccwa")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="HitBox" type="Area2D" parent="." unique_id=1651010465]
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=1733226782]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_wccwa")
