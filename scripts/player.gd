@@ -15,12 +15,13 @@ var max_y: float = 216.0
 
 var fire_timer: float = 0.0
 
-@onready var ship_sprite: Sprite2D = $ShipSprite
+@onready var ship_sprite: AnimatedSprite2D = $ShipSprite
 var bullet_scene: PackedScene = preload("res://scenes/bullet.tscn")
 
-@export var frame_idle: int = 18
-@export var frame_lean_left: int = 16
-@export var frame_lean_right: int = 20
+@onready var hitbox: Area2D = $HitBox
+
+func _ready() -> void:
+	hitbox.area_entered.connect(_on_hit)
 
 func _physics_process(delta: float) -> void:
 	# Get input
@@ -63,8 +64,12 @@ func shoot() -> void:
 
 func update_animation() -> void:
 	if Input.is_action_pressed("ui_left"):
-		ship_sprite.frame = frame_lean_left
+		ship_sprite.play("lean_left")
 	elif Input.is_action_pressed("ui_right"):
-		ship_sprite.frame = frame_lean_right
+		ship_sprite.play("lean_right")
 	else:
-		ship_sprite.frame = frame_idle
+		ship_sprite.play("idle")
+
+func _on_hit(area: Area2D):
+	print("player hit!")
+	
