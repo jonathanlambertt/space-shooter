@@ -85,3 +85,4 @@ func _on_hit(area: Area2D) -> void:
 	# Flash the ship red briefly to indicate damage
 	ship_sprite.modulate = Color(1, 0.3, 0.3)
 	hurt_timer = hurt_duration
+	Sfx.play_hit()

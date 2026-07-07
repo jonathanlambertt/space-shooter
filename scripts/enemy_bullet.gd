@@ -1,6 +1,6 @@
 extends Area2D
 
-var speed: float = 150.0
+var speed: float = 130.0
 
 func _physics_process(delta: float) -> void:
 	position.y += speed * delta

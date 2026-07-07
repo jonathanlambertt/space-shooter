@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cp4yhuaynrc7v"]
 
-[ext_resource type="Texture2D" uid="uid://4rrgwnwqps2p" path="res://assets/spritesheet.png" id="1_7p1mj"]
+[ext_resource type="Texture2D" uid="uid://cru4xqgsikehp" path="res://assets/spritesheet.png" id="1_7p1mj"]
 [ext_resource type="Script" uid="uid://bm3kkk4af1d57" path="res://scripts/enemy.gd" id="1_md0e3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wccwa"]
@@ -16,7 +16,7 @@ rotation = 3.1415927
 texture = ExtResource("1_7p1mj")
 hframes = 8
 vframes = 4
-frame = 4
+frame = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1668322984]
 shape = SubResource("RectangleShape2D_wccwa")

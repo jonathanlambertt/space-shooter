@@ -26,10 +26,6 @@ autoscroll = Vector2(0, 40)
 texture = ExtResource("2_iywne")
 centered = false
 
-[node name="Player" parent="." unique_id=1173701108 instance=ExtResource("4_lbhrr")]
-position = Vector2(192, 180)
-script = ExtResource("4_iywne")
-
 [node name="Enemy" parent="." unique_id=1559925770 instance=ExtResource("5_iywne")]
 position = Vector2(192, 40)
 
@@ -38,3 +34,7 @@ position = Vector2(128, 40)
 
 [node name="Enemy3" parent="." unique_id=330743069 instance=ExtResource("5_iywne")]
 position = Vector2(256, 40)
+
+[node name="Player" parent="." unique_id=1173701108 instance=ExtResource("4_lbhrr")]
+position = Vector2(192, 180)
+script = ExtResource("4_iywne")

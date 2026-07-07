@@ -1,33 +1,33 @@
 [gd_scene format=3 uid="uid://dyujc20bqiv7r"]
 
-[ext_resource type="Texture2D" uid="uid://4rrgwnwqps2p" path="res://assets/spritesheet.png" id="1_3vyb7"]
+[ext_resource type="Texture2D" uid="uid://cru4xqgsikehp" path="res://assets/spritesheet.png" id="1_3vyb7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3poc4"]
 size = Vector2(9, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3vyb7"]
 atlas = ExtResource("1_3vyb7")
-region = Rect2(0, 24, 24, 24)
+region = Rect2(0, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("1_3vyb7")
-region = Rect2(24, 24, 24, 24)
+region = Rect2(24, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
 atlas = ExtResource("1_3vyb7")
-region = Rect2(48, 24, 24, 24)
+region = Rect2(48, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
 atlas = ExtResource("1_3vyb7")
-region = Rect2(72, 24, 24, 24)
+region = Rect2(72, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
 atlas = ExtResource("1_3vyb7")
-region = Rect2(0, 48, 24, 24)
+region = Rect2(0, 24, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
 atlas = ExtResource("1_3vyb7")
-region = Rect2(96, 48, 24, 24)
+region = Rect2(24, 24, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wccwa"]
 animations = [{

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cru4xqgsikehp"
-path="res://.godot/imported/spritesheet.png-76e0b916bc20d45ac6900db6e21d8a9e.ctex"
+uid="uid://dqy12d64icuk2"
+path="res://.godot/imported/controls_keycaps.png-1a6d9c4861571d68b6ae04bd1596681a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/spritesheet.png"
-dest_files=["res://.godot/imported/spritesheet.png-76e0b916bc20d45ac6900db6e21d8a9e.ctex"]
+source_file="res://assets/controls_keycaps.png"
+dest_files=["res://.godot/imported/controls_keycaps.png-1a6d9c4861571d68b6ae04bd1596681a.ctex"]
 
 [params]
 

@@ -8,14 +8,23 @@ extends Area2D
 var start_x: float = 0.0
 var direction: float = 1.0
 var fire_timer: float = 0.0
+var hurt_timer: float = 0.0
+var hurt_duration: float = 0.15
 
 var enemy_bullet_scene: PackedScene = preload("res://scenes/enemy_bullet.tscn")
+@onready var sprite: Sprite2D = $Sprite2D
 
 func _ready() -> void:
 	start_x = position.x
 	fire_timer = randf_range(min_fire_delay, max_fire_delay)
 
 func _physics_process(delta: float) -> void:
+	# Reset hurt tint when timer expires
+	if hurt_timer > 0:
+		hurt_timer -= delta
+		if hurt_timer <= 0:
+			sprite.modulate = Color(1, 1, 1)
+
 	# Strafe left and right
 	position.x += strafe_speed * direction * delta
 	
@@ -39,4 +48,6 @@ func shoot() -> void:
 	get_parent().add_child(bullet)
 
 func _on_area_entered(area: Area2D) -> void:
-	print("enemy hit!")
+	# Flash the ship red briefly to indicate damage
+	sprite.modulate = Color(1, 0.3, 0.3)
+	hurt_timer = hurt_duration

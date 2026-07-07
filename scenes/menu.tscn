@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://ce0cjhoi8kcea"]
+
+[ext_resource type="Texture2D" uid="uid://bb2klh0hque7f" path="res://assets/backgrounds/starfield_far_384x216.png" id="1_con2f"]
+[ext_resource type="Script" uid="uid://d3q0jj8r6xknn" path="res://scripts/menu.gd" id="1_mhnvy"]
+[ext_resource type="Texture2D" uid="uid://dl0nhv5lkxn5w" path="res://assets/backgrounds/starfield_near_384x216.png" id="2_mhnvy"]
+[ext_resource type="Texture2D" uid="uid://b0cnulfoq80ao" path="res://assets/play_demo_button.png" id="3_4ytvr"]
+[ext_resource type="PackedScene" uid="uid://dyujc20bqiv7r" path="res://scenes/player.tscn" id="5_4ytvr"]
+[ext_resource type="Texture2D" uid="uid://dqy12d64icuk2" path="res://assets/controls_keycaps.png" id="6_g3eks"]
+
+[node name="Menu" type="Control" unique_id=1607776519]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+script = ExtResource("1_mhnvy")
+
+[node name="ParallaxFar" type="Parallax2D" parent="." unique_id=1856166854]
+scroll_scale = Vector2(0, 0.3)
+repeat_size = Vector2(384, 216)
+autoscroll = Vector2(0, 20)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxFar" unique_id=836764143]
+texture = ExtResource("1_con2f")
+centered = false
+
+[node name="ParallaxNear" type="Parallax2D" parent="." unique_id=711765700]
+scroll_scale = Vector2(0, 0.6)
+repeat_size = Vector2(384, 216)
+autoscroll = Vector2(0, 40)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxNear" unique_id=2049677933]
+texture = ExtResource("2_mhnvy")
+centered = false
+
+[node name="Player" parent="." unique_id=1173701108 instance=ExtResource("5_4ytvr")]
+position = Vector2(192, 65)
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=861145939]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 100.0
+offset_right = 220.0
+offset_bottom = 116.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_4ytvr")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=691753806]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 135.0
+offset_right = 277.85
+offset_bottom = 168.0
+texture = ExtResource("6_g3eks")
