@@ -13,7 +13,6 @@ config_version=5
 config/name="space-shooty"
 run/main_scene="uid://ce0cjhoi8kcea"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [autoload]
 
@@ -23,10 +22,9 @@ Sfx="*uid://v1f1b1cb4xt3"
 
 window/size/viewport_width=384
 window/size/viewport_height=216
-window/size/mode=3
 window/size/resizable=false
-window/size/window_width_override=1920
-window/size/window_height_override=1080
+window/size/window_width_override=1536
+window/size/window_height_override=864
 window/stretch/mode="viewport"
 
 [input]
