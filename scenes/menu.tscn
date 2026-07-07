@@ -47,8 +47,9 @@ texture_normal = ExtResource("3_4ytvr")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=691753806]
 layout_mode = 0
-offset_left = 164.0
+offset_left = 168.0
 offset_top = 135.0
-offset_right = 277.85
+offset_right = 281.85
 offset_bottom = 168.0
 texture = ExtResource("6_g3eks")
+stretch_mode = 2

@@ -9,6 +9,7 @@ func _ready() -> void:
 
 func _on_play_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	#print("do start game")
 
 func _on_hover() -> void:
 	play_button.modulate = Color(1.3, 1.3, 1.3)
