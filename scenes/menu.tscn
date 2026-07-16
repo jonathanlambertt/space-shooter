@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dl0nhv5lkxn5w" path="res://assets/backgrounds/starfield_near_384x216.png" id="2_mhnvy"]
 [ext_resource type="Texture2D" uid="uid://b0cnulfoq80ao" path="res://assets/play_demo_button.png" id="3_4ytvr"]
 [ext_resource type="PackedScene" uid="uid://dyujc20bqiv7r" path="res://scenes/player.tscn" id="5_4ytvr"]
+[ext_resource type="Script" uid="uid://c4e6stn74v70y" path="res://scripts/player.gd" id="5_v86rl"]
 [ext_resource type="Texture2D" uid="uid://dqy12d64icuk2" path="res://assets/controls_keycaps.png" id="6_g3eks"]
 
 [node name="Menu" type="Control" unique_id=1607776519]
@@ -35,6 +36,7 @@ centered = false
 
 [node name="Player" parent="." unique_id=1173701108 instance=ExtResource("5_4ytvr")]
 position = Vector2(192, 65)
+script = ExtResource("5_v86rl")
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=861145939]
 layout_mode = 0
